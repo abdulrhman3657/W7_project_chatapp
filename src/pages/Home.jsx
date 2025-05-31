@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 
 function Home() {
+
   const username = localStorage.getItem("username");
 
   const [messages, setMessage] = useState([]);
@@ -10,7 +11,6 @@ function Home() {
   const endRef = useRef(null);
 
   useEffect(() => {
-
     endRef.current?.scrollIntoView({ behavior: "smooth" });
 
     axios
@@ -61,8 +61,8 @@ function Home() {
             key={index}
             className={
               username == message.user
-                ? "flex flex-col bg-gray-900 text-white w-50 p-3 self-end rounded-2xl m-3"
-                : "flex flex-col bg-gray-200 w-50 p-3 m-3 rounded-2xl"
+                ? "flex flex-col bg-gray-900 text-white w-1/2 h-full p-3  self-end rounded-2xl m-3"
+                : "flex flex-col bg-gray-200 w-1/2 p-3 m-3 rounded-2xl"
             }
           >
             <p className="text-xl">{message.text}</p>
